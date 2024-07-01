@@ -21,7 +21,8 @@ public class MenuPage extends SeleniumWrappers{
 	@FindBy(linkText = "My account")
 	public WebElement myAccountLink;
 	
-	
+	@FindBy(linkText = "CONTACT")
+	 public WebElement contactPageLink;
 	
 	
 }

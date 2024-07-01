@@ -32,7 +32,7 @@ public class BaseTest {
 	*/
 	
 	@Parameters({"appUrl"})
-	@BeforeMethod(alwaysRun = true)
+	@BeforeClass(alwaysRun = true)
 	public void setup(String url) {
 		
 		driver = new ChromeDriver();
@@ -43,7 +43,7 @@ public class BaseTest {
 		jse = (JavascriptExecutor) driver;
 	}
 	
-	@AfterMethod(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void tearDown() throws InterruptedException  {
 		Thread.sleep(5000);//bad practice
 		driver.quit();

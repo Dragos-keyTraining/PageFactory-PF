@@ -1,5 +1,7 @@
 package tests;
 
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import framework.utils.PropertiesFileProcessor;
@@ -14,12 +16,17 @@ public class LoginTest extends BaseTest{
 
 	@Test
 	public void validLogin() {
+		System.err.println("Super mesaj");
+		
 		
 		MenuPage menu =  new MenuPage(driver);
 		MyAccountPage myAccount =  new MyAccountPage(driver);
 				
 		menu.click(menu.myAccountLink);
 		myAccount.loginInApp(USER, PASS);
+		
+		assertTrue(myAccount.myAccountContent.isDisplayed());
+		
 	}
 	
 	
